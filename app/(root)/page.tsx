@@ -135,14 +135,14 @@ export default function Home() {
                         <h2 className="cpynq c670g c8dzi cme53">Open-Source Projects</h2>
                         {/* <!-- Cards --> */}
                         <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
+                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="https://github.com/Harkanni/Javascript-design-patterns">
                               <div className="c0bc4 cglmn cfwvb">
                                  <div className="c4a0m">
                                     <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
                                        <Image src={project_icon_01} width="18" height="18" alt="Project 01" />
                                     </div>
-                                    <div className="cpynq c670g c5rvt c0kco">Awesome Container Tinkering</div>
-                                    <p className="cxslc c2bb0 cme8e c4udf">Solutions for running containers locally and remotely.</p>
+                                    <div className="cpynq c670g c5rvt c0kco">Javascript Design Patterns</div>
+                                    <p className="cxslc c2bb0 cme8e c4udf">Proven solutions for structuring JavaScript code, both in local development environments.</p>
                                  </div>
                                  <div className="chugl creo2 cfwvb">
                                     <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -151,14 +151,14 @@ export default function Home() {
                                  </div>
                               </div>
                            </a>
-                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
+                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="https://github.com/Harkanni/jackpot-login">
                               <div className="c0bc4 cglmn cfwvb">
                                  <div className="c4a0m">
                                     <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
                                        <Image src={project_icon_02} width="18" height="18" alt="Project 02" />
                                     </div>
-                                    <div className="cpynq c670g c5rvt c0kco">Engine Prototypes</div>
-                                    <p className="cxslc c2bb0 cme8e c4udf">Solutions for running containers locally and remotely.</p>
+                                    <div className="cpynq c670g c5rvt c0kco">Jackpot Login System</div>
+                                    <p className="cxslc c2bb0 cme8e c4udf">Card-based authentication and session management for secure access..</p>
                                  </div>
                                  <div className="chugl creo2 cfwvb">
                                     <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
