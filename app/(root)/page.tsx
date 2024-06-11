@@ -52,16 +52,16 @@ export default function Home() {
                         {/* <!-- Filters --> */}
                         <ul className="cg3vi crdpf cnxqt c8z7y cme8e cfwvb">
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'all' ? activeClass : oldClass} tab-head`} id="all" href="#0" onClick={() => handleToggleTab('all')}>All</a>
+                              <a className={`${activeTab == 'all' ? activeClass : oldClass} tab-head`} id="all" href="#" onClick={() => handleToggleTab('all')}>All</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'coding' ? activeClass : oldClass} tab-head`} id="coding" href="#0" onClick={() => handleToggleTab('coding')}>Coding</a>
+                              <a className={`${activeTab == 'coding' ? activeClass : oldClass} tab-head`} id="coding" href="#" onClick={() => handleToggleTab('coding')}>Coding</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'tutorial' ? activeClass : oldClass} tab-head`} id="tutorial" href="#0" onClick={() => handleToggleTab('tutorial')}>Tutorials</a>
+                              <a className={`${activeTab == 'tutorial' ? activeClass : oldClass} tab-head`} id="tutorial" href="#" onClick={() => handleToggleTab('tutorial')}>Tutorials</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'indie' ? activeClass : oldClass} tab-head`} id="indie" href="#0" onClick={() => handleToggleTab('indie')}>Indie Hacking</a>
+                              <a className={`${activeTab == 'indie' ? activeClass : oldClass} tab-head`} id="indie" href="#" onClick={() => handleToggleTab('indie')}>Indie Hacking</a>
                            </li>
                         </ul>
                         {/* <!-- Articles list --> */}
@@ -103,7 +103,7 @@ export default function Home() {
                         <h2 className="cpynq c670g c8dzi cme53">Popular Talks</h2>
                         {/* <!-- Cards --> */}
                         <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                           <a className="ck1rl cegol cth4i c08dn c1gvt c6iwv c9ic7 czh94 crprk cpa9f c9alu chtu4 czz51 cjci4 c5c77" href="#0">
+                           <a className="ck1rl cegol cth4i c08dn c1gvt c6iwv c9ic7 czh94 crprk cpa9f c9alu chtu4 czz51 cjci4 c5c77" href="#">
                               <Image className="c8c2x c8bmc chzqd c5u91 cglmn c8pgj" src={popular_post_01} width="336" height="189" alt="Popular post 01" />
                               <div className="cpk71 cf0v5 c736y c9noy c5c77 c0bc4 cglmn cfwvb c5oxi">
                                  <div className="c5a0p cpynq c670g craoz c5rvt cew4t cfwvb">The Third Age of JavaScript</div>
@@ -115,7 +115,7 @@ export default function Home() {
                                  </div>
                               </div>
                            </a>
-                           <a className="ck1rl cegol cth4i c08dn c1gvt c6iwv c9ic7 czh94 crprk cpa9f c9alu chtu4 czz51 cjci4 c5c77" href="#0">
+                           <a className="ck1rl cegol cth4i c08dn c1gvt c6iwv c9ic7 czh94 crprk cpa9f c9alu chtu4 czz51 cjci4 c5c77" href="#">
                               <Image className="c8c2x c8bmc chzqd c5u91 cglmn c8pgj" src={popular_post_02} width="336" height="189" alt="Popular post 02" />
                               <div className="cpk71 cf0v5 c736y c9noy c5c77 c0bc4 cglmn cfwvb c5oxi">
                                  <div className="c5a0p cpynq c670g craoz c5rvt cew4t cfwvb">Building in Public Strategy</div>
@@ -134,7 +134,7 @@ export default function Home() {
                         <h2 className="cpynq c670g c8dzi cme53">Open-Source Projects</h2>
                         {/* <!-- Cards --> */}
                         <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#0">
+                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
                               <div className="c0bc4 cglmn cfwvb">
                                  <div className="c4a0m">
                                     <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -150,7 +150,7 @@ export default function Home() {
                                  </div>
                               </div>
                            </a>
-                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#0">
+                           <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
                               <div className="c0bc4 cglmn cfwvb">
                                  <div className="c4a0m">
                                     <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">

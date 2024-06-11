@@ -15,10 +15,10 @@ const Experience = ({title} : {title: string}) => {
                         </svg>
                      </div>
                      <div className="catbp c96dc">
-                        <div className="ck5r6 cd99g c2bb0">May 2020 <span className="crnoq cxuy4">·</span> Present</div>
+                        <div className="ck5r6 cd99g c2bb0">In The Future<span className="crnoq cxuy4">·</span> 👳🏾‍♂️ </div>
                         <div className="cpynq c670g cg0ht cxmc9">Senior Front-end Engineer</div>
                         <div className="cme8e cnp10 cg0ht cxmc9">Google</div>
-                        <div className="cme8e c2bb0 cxslc">In my role as a Senior Software Engineer for Google, I am responsible for developing and maintaining the Chrome Web Experience.</div>
+                        <div className="cme8e c2bb0 cxslc">In my role as a Senior Software Engineer for Google, I will be responsible for developing and maintaining the Chrome Web Experience. <span>👳🏾‍♂️</span></div>
                      </div>
                   </div>
                </li>

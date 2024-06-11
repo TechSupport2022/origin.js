@@ -28,7 +28,7 @@ const page = () => {
                                             <h2 className="cpynq c670g c8dzi cu69a">Side Hustles</h2>
                                             {/* <!-- Cards --> */}
                                             <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="cpk71 c5a0p c07io cfwvb">
@@ -47,7 +47,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -71,7 +71,7 @@ const page = () => {
                                             <h2 className="cpynq c670g c8dzi cu69a">Client Projects</h2>
                                             {/* <!-- Cards --> */}
                                             <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -87,7 +87,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -103,7 +103,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -119,7 +119,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -135,7 +135,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
@@ -151,7 +151,7 @@ const page = () => {
                                                         </div>
                                                     </div>
                                                 </a>
-                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#0">
+                                                <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
                                                     <div className="c0bc4 cglmn cfwvb">
                                                         <div className="c4a0m">
                                                             <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">

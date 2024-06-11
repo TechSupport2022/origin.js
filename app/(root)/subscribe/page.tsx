@@ -79,7 +79,7 @@ const page = () => {
                                     <section>                                    
                                         {/* <!-- Cards --> */}
                                         <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                                            <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#0">
+                                            <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
                                                 <div className="c0bc4 cglmn cfwvb">
                                                     <div className="c4a0m">
                                                         <Image className="c3iz2 c4udf" src={testimonial_01} width="40" height="40" alt="Testimonial 01" />
@@ -89,7 +89,7 @@ const page = () => {
                                                     <div className="cpynq c670g chugl ck5r6">— Mary Coyle</div>
                                                 </div>
                                             </a>
-                                            <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#0">
+                                            <a className="cg3vi cj965 cry3b ck1rl c81t6 cegol cax03 c6iwv cof6c c9o2h c9alu chtu4 czz51 c90wr c5oxi" href="#">
                                                 <div className="c0bc4 cglmn cfwvb">
                                                     <div className="c4a0m">
                                                         <Image className="c3iz2 c4udf" src={testimonial_02} width="40" height="40" alt="Testimonial 02" />

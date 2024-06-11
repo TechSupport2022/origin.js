@@ -19,7 +19,7 @@ const page = () => {
 
                         <section>
                            {/* <!-- Page title --> */}
-                           <h1 className="ciz93 cme53 cpynq">Hi. I'm Mark <span className="c5c77 cz5kb chugl c4ezg c8xm0 c6esp cfsb7 csd7h cdaqi c3ntq cofz6">@mrk27</span> Ivings 🤟</h1>
+                           <h1 className="ciz93 cme53 cpynq">Hi. I'm <span className="c5c77 cz5kb chugl c4ezg c8xm0 c6esp cfsb7 csd7h cdaqi c3ntq cofz6">@the_tech_lead</span> 🤟</h1>
 
                            {/* <!-- Large Banner Image --> */}
                            {/* <!-- Disabled for now, Add Later --> */}
@@ -29,7 +29,10 @@ const page = () => {
                               <div className="c9gi4">
                                  <h2 className="cjvvo cpynq cg0ht cxmc9">Short Bio</h2>
                                  <p>
-                                    I'm a software engineer with more than 10 years of experience in a variety of domains. For the past few years, I've focused on highload server-side projects, distributed systems, and platform development - tinkering with infrastructure, all things containers and Cloud Native.
+                                    I'm a software engineer with more than 5 years of experience in a variety of domains.
+                                 </p>
+                                 <p>
+                                    For the past few years, I've focused on fullstack server-side projects, native applications, and platform development - tinkering with infrastructure, all things Engineering and Microservices.
                                  </p>
                                  <p>
                                     While there isn't a Wikipedia page about me (sorry folks!), a media bio is available below.
@@ -37,20 +40,20 @@ const page = () => {
                               </div>
                               <div className="c9gi4">
                                  <h2 className="cjvvo cpynq cg0ht cxmc9">Career</h2>
+                                 {/* <p>
+                                    As CTO of AppForYou, <strong className="cnp10 cg0ht cxmc9">I am responsible for leading</strong> the technical team and developing the company's technology strategy. I work closely with the engineering team to ensure that the products and services we provide are secure.
+                                 </p> */}
                                  <p>
-                                    In my role as a Senior Software Engineer for Google Chrome, I am responsible for developing and maintaining the <a className="cnp10 chugl cm6cq" href="#0">Chrome Web Browser</a>.
+                                    My work involves developing and testing new features, optimizing performance and security, and ensuring our customer's websites and applications works for users around the world. I also work closely with  <a className="cnp10 chugl cm6cq" href="#">External API's</a> to ensure products are well-integrated with external gateways and services.
                                  </p>
                                  <p>
-                                    My work involves developing and testing new features, optimizing performance and security, and ensuring the browser works for users around the world. I also work closely with other Google teams ensure Chrome is well-integrated with other <a className="cnp10 chugl cm6cq" href="#0">Google</a> products and services.
-                                 </p>
-                                 <p>
-                                    As CTO of AppForYou, <strong className="cnp10 cg0ht cxmc9">I am responsible for leading</strong> the technical teamand developing the company's technology strategy. I work closely with the engineering team to ensure that the products and services we provide are secure.
+                                    In my role as The Techlead at MiT, I am responsible for developing and maintaining student learning curriculum, Web Architecture and overall Dev. experience of MiT Inc. <a className="cnp10 chugl cm6cq" href="#"> MiT Inc.</a>.
                                  </p>
                               </div>
 
 
                               {/* Experience Timeline */}
-                              <Experience title="Experience"/>
+                              <Experience title="Experience" />
 
 
                               <div className="c9gi4">
@@ -58,7 +61,7 @@ const page = () => {
                                  <p>
                                     I'm excited to connect with others via <a className="cnp10 chugl cm6cq" href="mailto:sendaraven2@gmail.com" target="_blank">email</a> and <a className="cnp10 chugl cm6cq" href="https://twitter.com/The_Tech_lead">Twitter</a> to chat about projects and ideas. Currently, I'm not taking on freelance projects, but I am open to hearing about potential opportunities, discussing them with you and then potentially collaborating if it's a good fit.
                                  </p>
-                              E</div>
+                              </div>
                            </div>
                         </section>
 

@@ -9,7 +9,7 @@ const ReferencesWidget = ({title} : {title: string}) => {
             <div className="cpynq c670g cec5b">{title}</div>
             <ul className="c3y7y">
                <li>
-                  <a className="cpk71 c5a0p c07io cpnf3 cfwvb" href="#0">
+                  <a className="cpk71 c5a0p c07io cpnf3 cfwvb" href="#">
                      <div className="c5a0p ckgwf crym2 cfwvb c4a0m">
                         <Image className="c3iz2" src={reference_01} width="32" height="32" alt="Mr. Mark Smularkov" />
                         <div className="crym2">
@@ -25,7 +25,7 @@ const ReferencesWidget = ({title} : {title: string}) => {
                   </a>
                </li>
                <li>
-                  <a className="cpk71 c5a0p c07io cpnf3 cfwvb" href="#0">
+                  <a className="cpk71 c5a0p c07io cpnf3 cfwvb" href="#">
                      <div className="c5a0p ckgwf crym2 cfwvb c4a0m">
                         <Image className="c3iz2" src={reference_02} width="32" height="32" alt="Jame Kulls" />
                         <div className="crym2">
