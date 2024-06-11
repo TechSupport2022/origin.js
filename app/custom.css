@@ -2,6 +2,10 @@
    display: none; 
 }
 
+.bg-blue {
+   background: linear-gradient(90deg,#4c73ff 2.34%,#389bff 100.78%);
+}
+
 .me2-div {
    width: 86px;
    height: 80px;

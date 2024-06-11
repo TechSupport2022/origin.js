@@ -20,7 +20,7 @@ const SideNavigation = () => {
                <div className="c5a0p cew4t cfwvb c4a0m">
                   <nav className="c8pgj">
                      <ul className="c9gi4">
-                        <li className="cgktm">
+                        <li className="cgktm" title='home'>
                            <Link className={`${pathname == "/" ? currentClass : oldClass}`}
                               href={`/`} >
                               <span className="c4g5b">Home</span>
@@ -32,7 +32,7 @@ const SideNavigation = () => {
                               </svg>
                            </Link>
                         </li>
-                        <li className="cgktm">
+                        <li className="cgktm" title='about'>
                            <Link className={`${pathname == "/about" ? currentClass : oldClass}`} href={`/about`}>
                               <span className="c4g5b">About</span>
                               <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -44,7 +44,7 @@ const SideNavigation = () => {
                               </svg>
                            </Link>
                         </li>
-                        <li className="cgktm" >
+                        <li className="cgktm" title='projects'>
                            <Link className={`${pathname == "/projects" ? currentClass : oldClass}`} href="/projects">
                               <span className="c4g5b">Projects</span>
                               <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -54,7 +54,7 @@ const SideNavigation = () => {
                               </svg>
                            </Link>
                         </li>
-                        <li className="cgktm" >
+                        <li className="cgktm" title='resume'>
                            <Link className={`${pathname == "/resume" ? currentClass : oldClass}`} href={`/resume`}>
                               <span className="c4g5b">Resume</span>
                               <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="18" height="20">
@@ -63,7 +63,7 @@ const SideNavigation = () => {
                               </svg>
                            </Link>
                         </li>
-                        <li className="cgktm" >
+                        <li className="cgktm" title='subscribe'>
                            <Link className={`${pathname == "/subscribe" ? currentClass : oldClass}`} href={`/subscribe`}>
                               <span className="c4g5b">Subscribe</span>
                               <svg className="cjnrq" xmlns="http://www.w3.org/2000/svg" width="21" height="21">

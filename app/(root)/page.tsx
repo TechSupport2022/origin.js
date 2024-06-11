@@ -65,16 +65,17 @@ export default function Home() {
                            </li>
                         </ul>
                         {/* <!-- Articles list --> */}
-                        <div>
+                        <div> </div>
 
-                        </div>
+
+
                         {/* image: post_thumb_01 */}
                         <div id="tab-body">
                            {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article) => {
                               return (
                                  <article className={`${!activeTab.indexOf(article.id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
                                     <div className="c9noy cfwvb">
-                                       <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3" src={article.img} width="88" height="88" alt="Post 01" />
+                                       <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={article.img} width="88" height="88" alt="Post 01" />
                                        <div>
                                           <div className="c2bb0 cd99g ck5r6 c0kco" id="post-date">
                                              <span className="chugl">—</span>
