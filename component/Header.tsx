@@ -1,36 +1,57 @@
 'use client'
 
-import React, { InputHTMLAttributes, useEffect } from 'react'
+import React, { InputHTMLAttributes, useEffect, useState } from 'react'
 
 const Header = () => {
+
+   const [isDarkMode, setIsDarkMode] = useState(
+      typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'true'
+   );
+
    useEffect(() => {
-      // Light switcher
-      const lightSwitches:NodeListOf<any> = document.querySelectorAll('.light-switch');
-      if (lightSwitches.length > 0) {
-         lightSwitches.forEach((lightSwitch, i) => {
-            if (localStorage.getItem('dark-mode') === 'true') {
-               // eslint-disable-next-line no-param-reassign
-               lightSwitch.checked = true;
-            }
-            lightSwitch.addEventListener('change', () => {
-               const { checked } = lightSwitch;
-               lightSwitches.forEach((el, n) => {
-                  if (n !== i) {
-                     // eslint-disable-next-line no-param-reassign
-                     el.checked = checked;
-                  }
-               });
-               if (lightSwitch.checked) {
-                  document.documentElement.classList.add('dark');
-                  localStorage.setItem('dark-mode', 'true');
-               } else {
-                  document.documentElement.classList.remove('dark');
-                  localStorage.setItem('dark-mode', 'false');
-               }
-            });
-         });
+      // Update the dark mode class on the document element
+      if (isDarkMode) {
+         document.documentElement.classList.add('dark');
+         localStorage.setItem('dark-mode', 'true');
+      } else {
+         document.documentElement.classList.remove('dark');
+         localStorage.setItem('dark-mode', 'false');
       }
-   })
+   }, [isDarkMode]);
+
+   const handleToggle = () => {
+      setIsDarkMode(!isDarkMode);
+   }
+
+   // useEffect(() => {
+   //    // Light switcher
+   //    const lightSwitches: NodeListOf<any> = document.querySelectorAll('.light-switch');
+   //    if (lightSwitches.length > 0) {
+   //       lightSwitches.forEach((lightSwitch, i) => {
+   //          if (localStorage.getItem('dark-mode') === 'true') {
+   //             // eslint-disable-next-line no-param-reassign
+   //             lightSwitch.checked = true;
+   //          }
+   //          lightSwitch.addEventListener('change', () => {
+   //             const { checked } = lightSwitch;
+   //             lightSwitches.forEach((el, n) => {
+   //                if (n !== i) {
+   //                   // eslint-disable-next-line no-param-reassign
+   //                   el.checked = checked;
+   //                }
+   //             });
+   //             if (lightSwitch.checked) {
+   //                document.documentElement.classList.add('dark');
+   //                localStorage.setItem('dark-mode', 'true');
+   //             } else {
+   //                document.documentElement.classList.remove('dark');
+   //                localStorage.setItem('dark-mode', 'false');
+   //             }
+   //          });
+   //       });
+   //    }
+   // })
+
    return (
       <>
          {/* <!-- Header --> */}
@@ -61,7 +82,7 @@ const Header = () => {
 
                   {/* <!-- Light switch --> */}
                   <div className="cfup8 c0bc4 c8r41 cfwvb">
-                     <input type="checkbox" name="light-switch" id="light-switch" className="light-switch c4g5b" />
+                     <input type="checkbox" name="light-switch" id="light-switch" className="light-switch c4g5b" checked={isDarkMode} onChange={handleToggle} />
                      <label className="cgfjk c5c77 c94ja" htmlFor="light-switch">
                         <svg className="cxg5x" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                            <path className="c40us"
