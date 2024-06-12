@@ -44,7 +44,7 @@ const page = () => {
                                     As CTO of AppForYou, <strong className="cnp10 cg0ht cxmc9">I am responsible for leading</strong> the technical team and developing the company's technology strategy. I work closely with the engineering team to ensure that the products and services we provide are secure.
                                  </p> */}
                                  <p>
-                                    My work involves developing and testing new features, optimizing performance and security, and ensuring our customer's websites and applications works for users around the world. I also work closely with  <a className="cnp10 chugl cm6cq" href="#">External API's</a> to ensure products are well-integrated with external gateways and services.
+                                    My work involves developing and testing new features, optimizing performance and security, and ensuring customer's websites and applications works for users around the world. I also work closely with  <a className="cnp10 chugl cm6cq" href="#">External API's</a> to ensure products are well-integrated with external gateways and services.
                                  </p>
                                  <p>
                                     In my role as The Techlead at MiT, I am responsible for developing and maintaining student learning curriculum, Web Architecture and overall Dev. experience of MiT Inc. <a className="cnp10 chugl cm6cq" href="#"> MiT Inc.</a>.
