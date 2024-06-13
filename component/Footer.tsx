@@ -41,7 +41,7 @@ const Footer = () => {
                                 </ul>
                             
                                 {/* <!-- Copyright --> */}
-                                <div className="cme8e c2bb0 cxslc">Copyright © Cruip. All rights reserved.</div>
+                                <div className="cme8e c2bb0 cxslc">Copyright @the_Tech_lead. All rights reserved.</div>
                             
                             </div>
                         </div>
