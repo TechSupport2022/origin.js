@@ -80,8 +80,8 @@ const page = () => {
                                              <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
                                                 <Image src={project_icon_03} width="18" height="18" alt="Project 03" />
                                              </div>
-                                             <div className="cpynq c670g c5rvt c0kco">John Horta</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">Code assets and services for people, with people.</p>
+                                             <div className="cpynq c670g c5rvt c0kco">John Horta Architectural Legacy</div>
+                                             <p className="cxslc c2bb0 cme8e c4udf">The distinguished career of Belgian architect John Horta known for revolutionizing modern architecture.</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -96,8 +96,8 @@ const page = () => {
                                              <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
                                                 <Image src={project_icon_04} width="18" height="18" alt="Project 04" />
                                              </div>
-                                             <div className="cpynq c670g c5rvt c0kco">Real Estate</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">helps you develop and manage your property, Find out what your home is really worth and UIs.</p>
+                                             <div className="cpynq c670g c5rvt c0kco">Real Estate Value Estimator</div>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Offering homeowners accurate insights into their home's market worth, Find out what your home is really worth. </p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -113,7 +113,7 @@ const page = () => {
                                                 <Image src={project_icon_05} width="18" height="18" alt="Project 05" />
                                              </div>
                                              <div className="cpynq c670g c5rvt c0kco">Knowledge AI</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">Instantly answers all questions based on your internal knowledge bases.</p>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Effortlessly delivers concise summaries for any article, simply by providing the link..</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -129,7 +129,7 @@ const page = () => {
                                                 <Image src={project_icon_06} width="18" height="18" alt="Project 06" />
                                              </div>
                                              <div className="cpynq c670g c5rvt c0kco">Radiant Creative Pro</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">Automated security compliance for your business.</p>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Showcases exquisite creativity in art and branding..</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -145,7 +145,7 @@ const page = () => {
                                                 <Image src={project_icon_07} width="18" height="18" alt="Project 07" />
                                              </div>
                                              <div className="cpynq c670g c5rvt c0kco">Astrolus</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">The most powerful kanban board ever invented.</p>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Efficiently introduces startup companies with a sleek and modern design, ideal for making impactful first impressions..</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -154,14 +154,14 @@ const page = () => {
                                           </div>
                                        </div>
                                     </a>
-                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
+                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://github.com/Harkanni/alt-design">
                                        <div className="c0bc4 cglmn cfwvb">
                                           <div className="c4a0m">
                                              <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
                                                 <Image src={project_icon_08} width="18" height="18" alt="Project 08" />
                                              </div>
-                                             <div className="cpynq c670g c5rvt c0kco">T Analytics</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">Make your Twitter analytics pretty and easy to share.</p>
+                                             <div className="cpynq c670g c5rvt c0kco">ALT - DESIGN</div>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Another Showcase of exquisite creativity in art and branding..</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -173,9 +173,8 @@ const page = () => {
                                  </div>
                               </section>
                               {/* <!-- Demo Projects --> */}
-                              {/* <!-- Client Projects cards --> */}
                               <section>
-                                 <h2 className="cpynq c670g c8dzi cu69a">Demo Projects</h2>
+                                 <h2 className="cpynq c670g c8dzi cu69a">Projects Demonstrating My Coding Skills</h2>
                                  {/* <!-- Cards --> */}
                                  <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
                                     <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://github.com/Harkanni/card-stack-on-scroll-effect">
@@ -201,7 +200,7 @@ const page = () => {
                                                 <Image src={project_icon_04} width="18" height="18" alt="Project 04" />
                                              </div>
                                              <div className="cpynq c670g c5rvt c0kco">Tailus - Atom</div>
-                                             <p className="cxslc c2bb0 cme8e c4udf">Storybook helps you develop, test, and document UIs.</p>
+                                             <p className="cxslc c2bb0 cme8e c4udf">Helps you develop, test, and document UIs with a awesome Showcase of art and branding..</p>
                                           </div>
                                           <div className="chugl creo2 cfwvb">
                                              <svg className="cblsf ck1rl cjnrq cq4kb cn2yf" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
