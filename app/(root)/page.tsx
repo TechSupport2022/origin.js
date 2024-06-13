@@ -6,27 +6,55 @@ import Image from "next/image";
 import { me, me2, popular_post_01, popular_post_02, post_thumb_01, project_icon_01, project_icon_02 } from "@/assets"
 import RightSidebar from "@/component/RightSidebar";
 import { useEffect, useState } from "react";
+import Spinner from "@/component/Spinner";
 
 export default function Home() {
-   const activeClass = 'cxmc9 cgygf cg0ht cnp10 ch63g chipd cen0e tab-head active';
-   const oldClass = 'cts6h cb9ru cxslc c2bb0 chipd cen0e tab-head';
 
-   const [activeTab, setActiveTab] = useState<string>('all');
-
-   const handleToggleTab = (tabID: string) => {
-      setActiveTab(tabID)
+   interface Post {
+      _id: string;
+      title: String,
+      content: String,
+      author: String,
+      description: String,
+      category: String,
+      createdAt: {
+         type: Date,
+         default: Date
+      }
    }
 
 
+   const activeClass = 'cxmc9 cgygf cg0ht cnp10 ch63g chipd cen0e tab-head active';
+   const oldClass = 'cts6h cb9ru cxslc c2bb0 chipd cen0e tab-head';
+
+   const [posts, setPosts] = useState<Post[]>([]);
+   const [activeTab, setActiveTab] = useState<string>('all');
+   const [loading, setLoading] = useState<boolean>(true); // Initial loading state
+
+
+
    useEffect(() => {
-      setActiveTab(activeTab);
-   }, [activeTab])
+      fetch('/api/posts')
+         .then((res) => res.json())
+         .then((data) => {
+            if (data.success) {
+               setPosts(data.data);
+            }
+            setLoading(false);
+         });
+   }, []);
+
+   const handleToggleTab = (tab: string, event: React.MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      setActiveTab(tab);
+   };
+
+   const filteredPosts = posts.filter((post) => activeTab === 'all' || post.category === activeTab);
+
+
    return (
       <>
 
-         {/* <!-- Main content --> */}
-         {/* <main className="c08dn c4a0m cajes">
-            <div className="csbbd c0bc4 cpphc cglmn c8pgj cfwvb"> */}
 
          {/* <!-- Hero --> */}
          <section>
@@ -52,16 +80,16 @@ export default function Home() {
                         {/* <!-- Filters --> */}
                         <ul className="cg3vi crdpf cnxqt c8z7y cme8e cfwvb">
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'all' ? activeClass : oldClass} tab-head`} id="all" href="#" onClick={() => handleToggleTab('all')}>All</a>
+                              <a className={`${activeTab == 'all' ? activeClass : oldClass} tab-head cursor-pointer`} href="" id="all" onClick={(event) => handleToggleTab('all', event)}>All</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'coding' ? activeClass : oldClass} tab-head`} id="coding" href="#" onClick={() => handleToggleTab('coding')}>Coding</a>
+                              <a className={`${activeTab == 'coding' ? activeClass : oldClass} tab-head cursor-pointer`} href="" id="coding" onClick={(event) => handleToggleTab('coding', event)}>Coding</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'tutorial' ? activeClass : oldClass} tab-head`} id="tutorial" href="#" onClick={() => handleToggleTab('tutorial')}>Tutorials</a>
+                              <a className={`${activeTab == 'tutorial' ? activeClass : oldClass} tab-head cursor-pointer`} href="" id="tutorial" onClick={(event) => handleToggleTab('tutorial', event)}>Tutorials</a>
                            </li>
                            <li className="cz4pw c59mu">
-                              <a className={`${activeTab == 'indie' ? activeClass : oldClass} tab-head`} id="indie" href="#" onClick={() => handleToggleTab('indie')}>Indie Hacking</a>
+                              <a className={`${activeTab == 'indie' ? activeClass : oldClass} tab-head cursor-pointer`} href="" id="indie" onClick={(event) => handleToggleTab('indie', event)}>Indie Hacking</a>
                            </li>
                         </ul>
                         {/* <!-- Articles list --> */}
@@ -71,31 +99,39 @@ export default function Home() {
 
                         {/* image: post_thumb_01 */}
                         <div id="tab-body">
-                           {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article, index) => {
-                              return (
-                                 <article key={index} className={`${!activeTab.indexOf(article.id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
-                                    <div className="c9noy cfwvb">
-                                       <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={article.img} width="88" height="88" alt="Post 01" />
-                                       <div>
-                                          <div className="c2bb0 cd99g ck5r6 c0kco" id="post-date">
-                                             <span className="chugl">—</span>
+                           {loading &&  <Spinner loading={loading} />}
+                          
+                           {!loading && posts && (
+                              <>
+                                 {/* {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article, index) => { */}
+                                 {filteredPosts.map((article, index) => {
+                                    return (
+                                       <article key={index} className={`${!activeTab.indexOf(article._id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
+                                          <div className="c9noy cfwvb">
+                                             <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={me2} width="88" height="88" alt="Post 01" />
+                                             <div>
+                                                <div className="c2bb0 cd99g ck5r6 c0kco" id="post-date">
+                                                   <span className="chugl">—</span>
+                                                </div>
+                                                <h3 className="cpynq c670g c5rvt c0kco">
+                                                   <a className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href="post.html" id="post-title">An Interactive Guide to Flexbox</a>
+                                                </h3>
+                                                <div className="cfwvb">
+                                                   <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> Flexbox is a remarkably flexible layout mode. When we understand how it works, we can build responsive designs that rearrange themselves as needed. </div>
+                                                   <a className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href="post.html" tabIndex={-1}>
+                                                      <svg className="cqlhq cjnrq cofma chtu4" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
+                                                         <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
+                                                      </svg>
+                                                   </a>
+                                                </div>
+                                             </div>
                                           </div>
-                                          <h3 className="cpynq c670g c5rvt c0kco">
-                                             <a className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href="post.html" id="post-title">An Interactive Guide to Flexbox</a>
-                                          </h3>
-                                          <div className="cfwvb">
-                                             <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> Flexbox is a remarkably flexible layout mode. When we understand how it works, we can build responsive designs that rearrange themselves as needed. </div>
-                                             <a className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href="post.html" tabIndex={-1}>
-                                                <svg className="cqlhq cjnrq cofma chtu4" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
-                                                   <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
-                                                </svg>
-                                             </a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </article>
-                              )
-                           })}
+                                       </article>
+                                    )
+                                 })}
+                              </>
+
+                           )}
 
                         </div>
                      </section>
