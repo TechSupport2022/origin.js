@@ -71,9 +71,9 @@ export default function Home() {
 
                         {/* image: post_thumb_01 */}
                         <div id="tab-body">
-                           {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article) => {
+                           {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article, index) => {
                               return (
-                                 <article className={`${!activeTab.indexOf(article.id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
+                                 <article key={index} className={`${!activeTab.indexOf(article.id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
                                     <div className="c9noy cfwvb">
                                        <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={article.img} width="88" height="88" alt="Post 01" />
                                        <div>
@@ -110,7 +110,7 @@ export default function Home() {
                                  <div className="c5a0p cpynq c670g craoz c5rvt cew4t cfwvb">The Third Age of JavaScript</div>
                                  <div className="creo2 cldiu c8pgj cew4t cfwvb">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41">
-                                       <circle className="crdeu" cx="20" cy="20" r="20" fill-opacity=".88"></circle>
+                                       <circle className="crdeu" cx="20" cy="20" r="20" fillOpacity=".88"></circle>
                                        <path className="c22wf" d="m24.765 19.5-6.263-4.375a.626.626 0 0 0-1.002.5v8.75c0 .5.564.812 1.002.5l6.263-4.375a.65.65 0 0 0 0-1Z"></path>
                                     </svg>
                                  </div>
@@ -122,7 +122,7 @@ export default function Home() {
                                  <div className="c5a0p cpynq c670g craoz c5rvt cew4t cfwvb">Building in Public Strategy</div>
                                  <div className="creo2 cldiu c8pgj cew4t cfwvb">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41">
-                                       <circle className="crdeu" cx="20" cy="20" r="20" fill-opacity=".88"></circle>
+                                       <circle className="crdeu" cx="20" cy="20" r="20" fillOpacity=".88"></circle>
                                        <path className="c22wf" d="m24.765 19.5-6.263-4.375a.626.626 0 0 0-1.002.5v8.75c0 .5.564.812 1.002.5l6.263-4.375a.65.65 0 0 0 0-1Z"></path>
                                     </svg>
                                  </div>
