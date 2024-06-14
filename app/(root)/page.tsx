@@ -7,6 +7,7 @@ import { me, me2, popular_post_01, popular_post_02, post_thumb_01, project_icon_
 import RightSidebar from "@/component/RightSidebar";
 import { useEffect, useState } from "react";
 import Spinner from "@/component/Spinner";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -114,15 +115,15 @@ export default function Home() {
                                                    <span className="chugl">—</span>
                                                 </div>
                                                 <h3 className="cpynq c670g c5rvt c0kco">
-                                                   <a className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href="post.html" id="post-title">An Interactive Guide to Flexbox</a>
+                                                   <Link className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href={`/posts/${article._id}`} id="post-title">An Interactive Guide to Flexbox</Link>
                                                 </h3>
                                                 <div className="cfwvb">
                                                    <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> Flexbox is a remarkably flexible layout mode. When we understand how it works, we can build responsive designs that rearrange themselves as needed. </div>
-                                                   <a className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href="post.html" tabIndex={-1}>
+                                                   <Link className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href={`/posts/${article._id}`} tabIndex={-1}>
                                                       <svg className="cqlhq cjnrq cofma chtu4" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
                                                          <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
                                                       </svg>
-                                                   </a>
+                                                   </Link>
                                                 </div>
                                              </div>
                                           </div>
