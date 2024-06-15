@@ -87,7 +87,7 @@ const Post = ({ params }: { params: { id: string } }) => {
                      <h1 className="cpynq cjd5a ciz93">{post?.title}</h1>
                   </header>
                   {/* Post Content */}
-                  <div className='cxslc c2bb0 cr8w3'>
+                  <div className=''>
                      <div dangerouslySetInnerHTML={{ __html: post?.content }} />
                   </div>
                </article>
