@@ -1,4 +1,4 @@
-'use client'
+'use clientSide'
 
 import { avatar_01, avatar_02, avatar_03, avatar_04, avatar_05 } from '@/assets'
 import Preview from '@/component/Preview'
