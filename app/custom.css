@@ -57,10 +57,14 @@ form .upload-description[placeholder]::placeholder {
   font-style: italic;
 }
 
-form .upload-author {
+form .upload-author, form .upload-title {
   background-color: #151e30;
   border-radius: 0.5rem;
   margin-top: 1rem;
+}
+
+.upload-title {
+   margin-bottom: 2rem;
 }
 
 form .upload-description {
