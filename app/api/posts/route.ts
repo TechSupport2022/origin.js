@@ -27,6 +27,7 @@ export async function GET(req: any) {
 export async function POST(req: any) {
    try {
       const body = await req.json();
+      console.log("this is body: " + body);
       const post = await Post.create(body);
       const response = new Response(JSON.stringify({ success: true, data: post }), { status: 201 });
       response.headers.set('Access-Control-Allow-Origin', '*');
