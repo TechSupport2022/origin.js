@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { css } from '@emotion/react';
 import ClipLoader from 'react-spinners/ClipLoader'; // Example using react-spinners library

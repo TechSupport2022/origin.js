@@ -121,6 +121,24 @@ pre {
   margin-block: 2rem;
 }
 
+.page-spinner {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   height: 100vh;
+   width: 100%;
+   background-color: rgb(15 23 42);
+   z-index: 999;
+}
+
+.page-spinner .spinner-inner {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
 /* background: linear-gradient(to right, #4ca5ff, #b573f8);
  background: linear-gradient(to right, #ff7170, #ffe57f);
  background: linear-gradient(to right, #ff4cc2, #f87393);
