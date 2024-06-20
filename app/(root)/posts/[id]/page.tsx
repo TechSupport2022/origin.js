@@ -4,6 +4,7 @@ import { avatar_01, avatar_02, avatar_03, avatar_04, avatar_05 } from '@/assets'
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import hljs from 'highlight.js';
 
 const Post = ({ params }: { params: { id: string } }) => {
    const [post, setPost]: any = useState(null);
@@ -25,8 +26,15 @@ const Post = ({ params }: { params: { id: string } }) => {
          }
       };
 
-      fetchPost()
-   }, [params.id])
+      fetchPost();
+   }, [])
+
+   // Effect to apply syntax highlighting
+   useEffect(() => {
+      if (post) {
+         hljs.highlightAll();
+      }
+   }, [post]);
 
    return (
       <div>

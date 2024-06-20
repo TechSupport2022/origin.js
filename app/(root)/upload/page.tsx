@@ -12,9 +12,50 @@ const page = () => {
 
    const [content, setContent] = useState('')
 
+   const [formData, setFormData] = useState<any>({
+      "title": '',
+      "content": '',
+      "author": '',
+      "description": '',
+      // image: '',
+      // category: '',
+   });
+
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+   };
+
+
    const handlePreview = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       setContent(event.target.value);
    };
+
+   const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      console.log("Submitting form now...");
+
+      try {
+         const response = await fetch('/api/posts', {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+         });
+
+         if (!response.ok) {
+            throw new Error('Failed to submit post');
+         }
+
+         const data = await response.json();
+         console.log('Post submitted successfully:', data);
+         // Handle success: e.g., update state, show success message, etc.
+      } catch (error: any) {
+         console.error('Error submitting post:', error.message);
+         // Handle error: e.g., show error message, log to analytics, etc.
+      }
+   }
 
    return (
       <>
@@ -97,13 +138,13 @@ const page = () => {
 
 
                   <form style={{ display: 'block', width: '100%' }} id="content-form">
-                     <input type="text" className="upload-author upload-title" placeholder="Enter Title" id="upload-title" />
-                     <textarea name="" id="upload-area" className="upload-area" placeholder="start typing...."
-                        onInput={handlePreview} value={content}></textarea>
-                     <textarea typeof='text' className="upload-description" placeholder="Enter your description" id="upload-description"></textarea>
-                     <input type="text" className="upload-author" placeholder="Enter author name" id="upload-author" />
-                     <input type="file" alt="" className="upload-image" placeholder="Select an image" />
-                     <button type="submit">
+                     <input name='title' value={formData.title} onChange={handleChange} type="text" className="upload-author upload-title" placeholder="Enter Title" id="upload-title" />
+                     <textarea name="content" id="upload-area" className="upload-area" placeholder="start typing...."
+                        onInput={handlePreview} value={formData.content} onChange={handleChange}></textarea>
+                     <textarea name='description' value={formData.Description} onChange={handleChange} typeof='text' className="upload-description" placeholder="Enter your description" id="upload-description"></textarea>
+                     <input name='author' value={formData.author} onChange={handleChange} type="text" className="upload-author" placeholder="Enter author name" id="upload-author" />
+                     <input name='image' type="file" alt="" className="upload-image" placeholder="Select an image" />
+                     <button type="submit" onClick={handleSubmit}>
                         Upload Now
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                            className="bi bi-threads" viewBox="0 0 16 16">

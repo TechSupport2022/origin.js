@@ -3,7 +3,6 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import hljs from 'highlight.js';
-import 'highlight.js/styles/default.css';
 
 interface PreviewProps {
    value: string;

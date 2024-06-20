@@ -1,47 +1,89 @@
 // app/api/posts/[id]/route.js
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import connectToDatabase from '../../../../lib/mongoose';
 import Post from '../../../../models/Post';
+import nextCors from 'next-cors';
+import cors from '@/lib/middleware';
+
+connectToDatabase();
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-   await connectToDatabase();
+
    const { id } = params;
+
    try {
       const post = await Post.findById(id);
       if (!post) {
-         return new Response(JSON.stringify({ success: false }), { status: 404 });
+         const response = new Response(JSON.stringify({ success: false, message: 'Post not found' }), { status: 404 });
+         response.headers.set('Access-Control-Allow-Origin', '*');
+         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+         response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+         return response;
       }
-      return new Response(JSON.stringify({ success: true, data: post }), { status: 200 });
-   } catch (error) {
-      return new Response(JSON.stringify({ success: false }), { status: 400 });
+      const response = new Response(JSON.stringify({ success: true, data: post }), { status: 200 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
+   } catch (error: any) {
+      const response = new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
    }
 }
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-   await connectToDatabase();
+
    const { id } = params;
    const body = await req.json();
    try {
-      const post = await Post.findByIdAndUpdate(id, body, { new: true, runValidators: true });
-      if (!post) {
-         return new Response(JSON.stringify({ success: false }), { status: 404 });
+      const body = await req.json();
+      const updatedPost = await Post.findByIdAndUpdate(id, body, { new: true });
+      if (!updatedPost) {
+         const response = new Response(JSON.stringify({ success: false, message: 'Post not found' }), { status: 404 });
+         response.headers.set('Access-Control-Allow-Origin', '*');
+         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+         response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+         return response;
       }
-      return new Response(JSON.stringify({ success: true, data: post }), { status: 200 });
-   } catch (error) {
-      return new Response(JSON.stringify({ success: false }), { status: 400 });
+      const response = new Response(JSON.stringify({ success: true, data: updatedPost }), { status: 200 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
+   } catch (error: any) {
+      const response = new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
    }
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-   await connectToDatabase();
+
    const { id } = params;
    try {
-      const deletedPost = await Post.deleteOne({ _id: id });
+      const deletedPost = await Post.findByIdAndDelete(id);
       if (!deletedPost) {
-         return new Response(JSON.stringify({ success: false }), { status: 404 });
+         const response = new Response(JSON.stringify({ success: false, message: 'Post not found' }), { status: 404 });
+         response.headers.set('Access-Control-Allow-Origin', '*');
+         response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+         response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+         return response;
       }
-      return new Response(JSON.stringify({ success: true, data: {} }), { status: 200 });
-   } catch (error) {
-      return new Response(JSON.stringify({ success: false }), { status: 400 });
+      const response = new Response(JSON.stringify({ success: true, message: 'Post deleted successfully' }), { status: 200 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
+   } catch (error: any) {
+      const response = new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      return response;
    }
 }

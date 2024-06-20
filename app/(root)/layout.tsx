@@ -5,6 +5,7 @@ import "../custom.css";
 import SideNavigation from "@/component/SideNavigation";
 import Header from "@/component/Header";
 import Footer from "@/component/Footer";
+import 'highlight.js/styles/default.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
