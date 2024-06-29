@@ -5,7 +5,7 @@ const PostSchema= new Schema({
   content: { type: String },
   author: { type: String },
   description: { type: String },
-  category: { type: String },
+  category: [],
   createdAt: {
     type: Date,
     default: new Date(),

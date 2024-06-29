@@ -17,7 +17,7 @@ export default function Home() {
       content: String,
       author: String,
       description: String,
-      category: String,
+      category: [string],
       createdAt: {
          type: Date,
          default: Date
@@ -31,26 +31,57 @@ export default function Home() {
    const [posts, setPosts] = useState<Post[]>([]);
    const [activeTab, setActiveTab] = useState<string>('all');
    const [loading, setLoading] = useState<boolean>(true); // Initial loading state
+   const [page, setPage] = useState(1);
+   const [totalPages, setTotalPages] = useState(1);
+
 
 
 
    useEffect(() => {
-      fetch('/api/posts')
-         .then((res) => res.json())
-         .then((data) => {
-            if (data.success) {
-               setPosts(data.data);
-            }
+      const fetchPosts = async () => {
+         setLoading(true);
+         try {
+            const response = await fetch(`/api/posts?page=${page}&limit=5`);
+            const data = await response.json();
+            setPosts(data.data);
+            setTotalPages(data.totalPages);
+         } catch (error) {
+            console.error('Error fetching posts:', error);
+         } finally {
             setLoading(false);
-         });
-   }, []);
+         }
+      };
+
+      fetchPosts();
+   }, [page]);
+
+   const handleNextPage = () => {
+      if (page < totalPages) {
+         setPage((prevPage) => prevPage + 1);
+      }
+   };
+
+   const handlePreviousPage = () => {
+      if (page > 1) {
+         setPage((prevPage) => prevPage - 1);
+      }
+   };
 
    const handleToggleTab = (tab: string, event: React.MouseEvent<HTMLAnchorElement>) => {
       event.preventDefault();
       setActiveTab(tab);
    };
 
-   const filteredPosts = posts.filter((post) => activeTab === 'all' || post.category === activeTab);
+   const matchesActiveTab = (category: [string], activeTab: string) => {
+      console.log("This is category: " + category)
+      let result = activeTab === 'all' || category.some(cat => String(cat.toString()).includes(activeTab));
+      console.log(result);
+      return result;
+   }
+
+   const filteredPosts = posts.filter(post => matchesActiveTab(post.category, activeTab));
+   console.log(filteredPosts)
+
 
 
    return (
@@ -100,14 +131,14 @@ export default function Home() {
 
                         {/* image: post_thumb_01 */}
                         <div id="tab-body">
-                           {loading &&  <Spinner loading={loading} />}
-                          
+                           {loading && <Spinner loading={loading} />}
+
                            {!loading && posts && (
                               <>
                                  {/* {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article, index) => { */}
                                  {filteredPosts.map((article, index) => {
                                     return (
-                                       <article key={index} className={`${!activeTab.indexOf(article._id) || !activeTab.indexOf('all') ? 'cg3vi crdpf c8z7y c3bdg' : 'd-none'}`} id="all coding">
+                                       <article key={index} className={`${'cg3vi crdpf c8z7y c3bdg'}`} id={`${article.category}`}>
                                           <div className="c9noy cfwvb">
                                              <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={me2} width="88" height="88" alt="Post 01" />
                                              <div>
@@ -130,6 +161,19 @@ export default function Home() {
                                        </article>
                                     )
                                  })}
+
+                                 <div className="pagination-container">
+                                    {/* {filteredPosts.map((item, index) => {
+                                       let page = index + 1;
+                                       return ( */}
+
+                                    <button className="pagination-btn" onClick={handlePreviousPage} disabled={page === 1}>Previous</button>
+                                    <span>Page {page} of {totalPages}</span>
+                                    <button className="pagination-btn" onClick={handleNextPage} disabled={page === totalPages}> Next </button>
+
+                                    {/* )
+                                    })} */}
+                                 </div>
                               </>
 
                            )}

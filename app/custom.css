@@ -57,14 +57,15 @@ form .upload-description[placeholder]::placeholder {
   font-style: italic;
 }
 
-form .upload-author, form .upload-title {
+form .upload-author,
+form .upload-title {
   background-color: #151e30;
   border-radius: 0.5rem;
   margin-top: 1rem;
 }
 
 .upload-title {
-   margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 form .upload-description {
@@ -122,22 +123,41 @@ pre {
 }
 
 .page-spinner {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: fixed;
-   height: 100vh;
-   width: 100%;
-   background-color: rgb(15 23 42);
-   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(15 23 42);
+  z-index: 999;
 }
 
 .page-spinner .spinner-inner {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.pagination-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  margin-block: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  /* background-color: #b573f8; */
+  background-image: linear-gradient(to top, #1e293b, rgb(30 41 59 / 0.3));
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  font-family: Aspekta, sans-serif;
+}
 
 /* background: linear-gradient(to right, #4ca5ff, #b573f8);
  background: linear-gradient(to right, #ff7170, #ffe57f);

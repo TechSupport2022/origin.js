@@ -18,11 +18,13 @@ const page = () => {
       "author": '',
       "description": '',
       // image: '',
-      // category: '',
+      "category": '',
    });
 
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+      if(e.target.name === "category") 
+      setFormData({ ...formData, [e.target.name]: e.target.value.split(",") });
+      else setFormData({ ...formData, [e.target.name]: e.target.value });
    };
 
 
@@ -142,7 +144,10 @@ const page = () => {
                      <textarea name="content" id="upload-area" className="upload-area" placeholder="start typing...."
                         onInput={handlePreview} value={formData.content} onChange={handleChange}></textarea>
                      <textarea name='description' value={formData.Description} onChange={handleChange} typeof='text' className="upload-description" placeholder="Enter your description" id="upload-description"></textarea>
-                     <input name='author' value={formData.author} onChange={handleChange} type="text" className="upload-author" placeholder="Enter author name" id="upload-author" />
+                     <div style={{display: "flex", justifyContent: "space-between", gap: "2rem", marginBottom: "1rem"}}>
+                        <input name='author' value={formData.author} onChange={handleChange} type="text" className="upload-author" placeholder="Enter author name" id="upload-author" style={{flex: 1}}/>
+                        <input name='category' value={formData.category} onChange={handleChange} type="text" className="upload-author" placeholder="Category" id="upload-category" style={{flex: 1}}/>
+                     </div>
                      <input name='image' type="file" alt="" className="upload-image" placeholder="Select an image" />
                      <button type="submit" onClick={handleSubmit}>
                         Upload Now
