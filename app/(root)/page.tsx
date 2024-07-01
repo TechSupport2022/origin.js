@@ -79,7 +79,7 @@ export default function Home() {
       return result;
    }
 
-   const filteredPosts = posts.filter(post => matchesActiveTab(post.category, activeTab));
+   const filteredPosts = posts?.filter(post => matchesActiveTab(post.category, activeTab));
    console.log(filteredPosts)
 
 
@@ -136,8 +136,30 @@ export default function Home() {
                            {!loading && posts && (
                               <>
                                  {/* {[{ id: 'coding', img: me2 }, { id: 'tutorial', img: me }, { id: 'indie', img: me }].map((article, index) => { */}
-                                 {filteredPosts.map((article, index) => {
+                                 {filteredPosts?.map((article, index) => {
                                     return (
+                                       // <article key={index} className={`${'cg3vi crdpf c8z7y c3bdg'}`} id={`${article.category}`}>
+                                       //    <div className="c9noy cfwvb">
+                                       //       <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={me2} width="88" height="88" alt="Post 01" />
+                                       //       <div>
+                                       //          <div className="c2bb0 cd99g ck5r6 c0kco" id="post-date">
+                                       //             <span className="chugl">—</span>
+                                       //          </div>
+                                       //          <h3 className="cpynq c670g c5rvt c0kco">
+                                       //             <Link className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href={`/posts/${article._id}`} id="post-title">An Interactive Guide to Flexbox</Link>
+                                       //          </h3>
+                                       //          <div className="cfwvb">
+                                       //             <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> Flexbox is a remarkably flexible layout mode. When we understand how it works, we can build responsive designs that rearrange themselves as needed. </div>
+                                       //             <Link className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href={`/posts/${article._id}`} tabIndex={-1}>
+                                       //                <svg className="cqlhq cjnrq cofma chtu4" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
+                                       //                   <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>
+                                       //                </svg>
+                                       //             </Link>
+                                       //          </div>
+                                       //       </div>
+                                       //    </div>
+                                       // </article>
+
                                        <article key={index} className={`${'cg3vi crdpf c8z7y c3bdg'}`} id={`${article.category}`}>
                                           <div className="c9noy cfwvb">
                                              <Image className="c906c cr6xl c8c2x c9xwx ccj8i co6sp c5zj3 bg-blue" src={me2} width="88" height="88" alt="Post 01" />
@@ -146,10 +168,10 @@ export default function Home() {
                                                    <span className="chugl">—</span>
                                                 </div>
                                                 <h3 className="cpynq c670g c5rvt c0kco">
-                                                   <Link className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href={`/posts/${article._id}`} id="post-title">An Interactive Guide to Flexbox</Link>
+                                                   <Link className="cfsb7 c2ers cofz6 cubqj cq25t cegle chlgd cdaqi c3ntq csd7h cdie3 c4ezg c8xm0 c6esp cofma cz5kb c5c77 cn2yf" href={`/posts/${article._id}`} id="post-title"> {article.title} </Link>
                                                 </h3>
                                                 <div className="cfwvb">
-                                                   <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> Flexbox is a remarkably flexible layout mode. When we understand how it works, we can build responsive designs that rearrange themselves as needed. </div>
+                                                   <div className="cxslc c2bb0 cme8e c4a0m" id="post-description"> {article.description} </div>
                                                    <Link className="cfup8 c5a0p chugl csb3e c86uy cw2lf cpnf3 cgej2" href={`/posts/${article._id}`} tabIndex={-1}>
                                                       <svg className="cqlhq cjnrq cofma chtu4" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
                                                          <path d="M9.586 5 6.293 1.707 7.707.293 13.414 6l-5.707 5.707-1.414-1.414L9.586 7H0V5h9.586Z"></path>

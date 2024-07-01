@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import hljs from 'highlight.js';
+import Spinner from '@/component/Spinner';
 
 const Post = ({ params }: { params: { id: string } }) => {
    const [post, setPost]: any = useState(null);
@@ -36,13 +37,20 @@ const Post = ({ params }: { params: { id: string } }) => {
       }
    }, [post]);
 
+
+   const formatDate = (isoString: string) => {
+      const date = new Date(isoString);
+      const options:any = { year: 'numeric', month: 'short', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options).toUpperCase();
+    };
+
    return (
       <div>
-         Hello world this is the slug: {params.id} <br />
-         This is the post :
+         {/* Hello world this is the slug: {params.id} <br />
+         This is the post : */}
 
          {/* <!-- Content --> */}
-         <div className='c6969 c9xin cr8w3 ci4j9 cr7br clwia cpqam c94qd c4a0m'>
+         <div className='c6969 c9xin cr8w3 ci4j9 clwia cpqam c4a0m' style={{ paddingTop: "2rem", lineHeight: "2rem" }}>
 
             {/* Middle area */}
             <div className='c4a0m'>
@@ -66,7 +74,7 @@ const Post = ({ params }: { params: { id: string } }) => {
                   <header>
                      <div className="cpk71 c5a0p c0kco cfwvb">
                         {/* <!-- Post date --> */}
-                        <div className="c2bb0 cd99g ck5r6"><span className="chugl">—</span> Dec 24, 2023 <span className="cxuy4 crnoq">·</span> 4 Min read</div>
+                        <div className="c2bb0 cd99g ck5r6"><span className="chugl">—</span> {formatDate(post?.createdAt)} <span className="cxuy4 crnoq">·</span> {post?.readingTime} Min read</div>
                         {/* <!-- Share buttons --> */}
                         <ul className="cz5kb">
                            <li>
@@ -95,6 +103,7 @@ const Post = ({ params }: { params: { id: string } }) => {
                      <h1 className="cpynq cjd5a ciz93">{post?.title}</h1>
                   </header>
                   {/* Post Content */}
+                  <Spinner loading={loading} />
                   <div className=''>
                      <div dangerouslySetInnerHTML={{ __html: post?.content }} />
                   </div>

@@ -4,8 +4,10 @@ import connectToDatabase from '../../../../lib/mongoose';
 import Post from '../../../../models/Post';
 import nextCors from 'next-cors';
 import cors from '@/lib/middleware';
+import { calculateReadingTime, highlightContent } from '@/lib/utils';
 
 connectToDatabase();
+
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
 
@@ -20,7 +22,10 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
          response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
          return response;
       }
-      const response = new Response(JSON.stringify({ success: true, data: post }), { status: 200 });
+      const readingTime = calculateReadingTime(post.content);
+      const highlightedContent = highlightContent(post.content);
+
+      const response = new Response(JSON.stringify({ success: true, data: { ...post.toObject(), readingTime, } }), { status: 200 });
       response.headers.set('Access-Control-Allow-Origin', '*');
       response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
