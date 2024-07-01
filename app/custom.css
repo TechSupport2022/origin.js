@@ -159,6 +159,19 @@ pre {
   font-family: Aspekta, sans-serif;
 }
 
+.LoadingModalWrapper {
+   position: fixed; /* Position relative to the wrapper */
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8); /* Example background */
+   z-index: 1; /* Ensure it's above the content */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 /* background: linear-gradient(to right, #4ca5ff, #b573f8);
  background: linear-gradient(to right, #ff7170, #ffe57f);
  background: linear-gradient(to right, #ff4cc2, #f87393);

@@ -1,8 +1,10 @@
 'use client'
 
 import { avatar_01, avatar_02, avatar_03, avatar_04, avatar_05 } from '@/assets'
+import LoadingModal from '@/component/LoadingModal'
 import Preview from '@/component/Preview'
 import Image from 'next/image'
+import { relative } from 'path'
 import { useState } from 'react'
 
 
@@ -10,6 +12,7 @@ import { useState } from 'react'
 
 const page = () => {
 
+   const [loading, setLoading] = useState(false)
    const [content, setContent] = useState('')
 
    const [formData, setFormData] = useState<any>({
@@ -22,8 +25,8 @@ const page = () => {
    });
 
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if(e.target.name === "category") 
-      setFormData({ ...formData, [e.target.name]: e.target.value.split(",") });
+      if (e.target.name === "category")
+         setFormData({ ...formData, [e.target.name]: e.target.value.split(",") });
       else setFormData({ ...formData, [e.target.name]: e.target.value });
    };
 
@@ -38,6 +41,7 @@ const page = () => {
       console.log("Submitting form now...");
 
       try {
+         setLoading(true);
          const response = await fetch('/api/posts', {
             method: 'POST',
             headers: {
@@ -52,15 +56,20 @@ const page = () => {
 
          const data = await response.json();
          console.log('Post submitted successfully:', data);
+         alert('Post submitted successfully');
          // Handle success: e.g., update state, show success message, etc.
       } catch (error: any) {
          console.error('Error submitting post:', error.message);
+         alert('Error submitting message. Try again latter');
          // Handle error: e.g., show error message, log to analytics, etc.
+      } finally {
+         setLoading(false);
       }
    }
 
    return (
       <>
+
          {/* <!-- Content --> */}
          <div className="c6969 c9xin cr8w3 ci4j9 cr7br clwia cpqam c94qd c4a0m">
 
@@ -79,58 +88,62 @@ const page = () => {
                      </a>
                   </div>
 
-                  {/* <!-- PAGE HEADLINE --> */}
-                  <article>
-                     {/* <!-- Post header --> */}
-                     <header>
-                        <div className="cpk71 c5a0p c0kco cfwvb">
-                           {/* <!-- Post date --> */}
-                           <div className="c2bb0 cd99g ck5r6"><span className="chugl">—</span> Dec 24, 2023 <span
-                              className="cxuy4 crnoq">·</span> 4 Min read</div>
-                           {/* <!-- Share buttons --> */}
-                           <ul className="cz5kb">
-                              <li>
-                                 <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
-                                    aria-label="Twitter">
-                                    <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z">
-                                       </path>
-                                    </svg>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
-                                    aria-label="Facebook">
-                                    <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="M14.023 24 14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257Z">
-                                       </path>
-                                    </svg>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
-                                    aria-label="Share">
-                                    <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path
-                                          d="M20 14c1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3c0 .223.029.439.075.649l-3.22 2.012A2.97 2.97 0 0 0 12 13c-1.654 0-3 1.346-3 3s1.346 3 3 3a2.97 2.97 0 0 0 1.855-.661l3.22 2.012c-.046.21-.075.426-.075.649 0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3a2.97 2.97 0 0 0-1.855.661l-3.22-2.012c.046-.21.075-.426.075-.649 0-.223-.029-.439-.075-.649l3.22-2.012A2.97 2.97 0 0 0 20 14Z">
-                                       </path>
-                                    </svg>
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                        <h1 className="cpynq cjd5a ciz93" style={{ marginBottom: "1.5rem" }}>Start typing your post.
-                           Preview appears below</h1>
-                     </header>
-                  </article>
+                  <div style={{ position: "relative" }}>
+                     {loading && <LoadingModal />
+}
+                     
+                     {/* <!-- PAGE HEADLINE --> */}
+                     <article>
+                        {/* <!-- Post header --> */}
+                        <header>
+                           <div className="cpk71 c5a0p c0kco cfwvb">
+                              {/* <!-- Post date --> */}
+                              <div className="c2bb0 cd99g ck5r6"><span className="chugl">—</span> Dec 24, 2023 <span
+                                 className="cxuy4 crnoq">·</span> 4 Min read</div>
+                              {/* <!-- Share buttons --> */}
+                              <ul className="cz5kb">
+                                 <li>
+                                    <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
+                                       aria-label="Twitter">
+                                       <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z">
+                                          </path>
+                                       </svg>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
+                                       aria-label="Facebook">
+                                       <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M14.023 24 14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257Z">
+                                          </path>
+                                       </svg>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a className="cqs8k cpvt7 chlgd cfup8 crnoq c5a0p cofma chtu4 coi2g cfwvb" href="#0"
+                                       aria-label="Share">
+                                       <svg className="cjnrq csb9v c2298" viewBox="0 0 32 32"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M20 14c1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3c0 .223.029.439.075.649l-3.22 2.012A2.97 2.97 0 0 0 12 13c-1.654 0-3 1.346-3 3s1.346 3 3 3a2.97 2.97 0 0 0 1.855-.661l3.22 2.012c-.046.21-.075.426-.075.649 0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3a2.97 2.97 0 0 0-1.855.661l-3.22-2.012c.046-.21.075-.426.075-.649 0-.223-.029-.439-.075-.649l3.22-2.012A2.97 2.97 0 0 0 20 14Z">
+                                          </path>
+                                       </svg>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <h1 className="cpynq cjd5a ciz93" style={{ marginBottom: "1.5rem" }}>Start typing your post.
+                              Preview appears below</h1>
+                        </header>
+                     </article>
 
-                  <Preview value={content} />
-                  {/* 
+                     <Preview value={content} />
+                     {/* 
                      <pre class="cgr7g c2bb0 ca9r6 cx6ng c9xwx cme8e cmy5q">
                         <code style="border-radius: 0.5rem">var str = "Hello world"
                            const greet = () => {console.log(str)}
@@ -139,25 +152,27 @@ const page = () => {
                   */}
 
 
-                  <form style={{ display: 'block', width: '100%' }} id="content-form">
-                     <input name='title' value={formData.title} onChange={handleChange} type="text" className="upload-author upload-title" placeholder="Enter Title" id="upload-title" />
-                     <textarea name="content" id="upload-area" className="upload-area" placeholder="start typing...."
-                        onInput={handlePreview} value={formData.content} onChange={handleChange}></textarea>
-                     <textarea name='description' value={formData.Description} onChange={handleChange} typeof='text' className="upload-description" placeholder="Enter your description" id="upload-description"></textarea>
-                     <div style={{display: "flex", justifyContent: "space-between", gap: "2rem", marginBottom: "1rem"}}>
-                        <input name='author' value={formData.author} onChange={handleChange} type="text" className="upload-author" placeholder="Enter author name" id="upload-author" style={{flex: 1}}/>
-                        <input name='category' value={formData.category} onChange={handleChange} type="text" className="upload-author" placeholder="Category" id="upload-category" style={{flex: 1}}/>
-                     </div>
-                     <input name='image' type="file" alt="" className="upload-image" placeholder="Select an image" />
-                     <button type="submit" onClick={handleSubmit}>
-                        Upload Now
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                           className="bi bi-threads" viewBox="0 0 16 16">
-                           <path
-                              d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161" />
-                        </svg>
-                     </button>
-                  </form>
+                     <form style={{ display: 'block', width: '100%' }} id="content-form">
+                        <input name='title' value={formData.title} onChange={handleChange} type="text" className="upload-author upload-title" placeholder="Enter Title" id="upload-title" />
+                        <textarea name="content" id="upload-area" className="upload-area" placeholder="start typing...."
+                           onInput={handlePreview} value={formData.content} onChange={handleChange}></textarea>
+                        <textarea name='description' value={formData.Description} onChange={handleChange} typeof='text' className="upload-description" placeholder="Enter your description" id="upload-description"></textarea>
+                        <div style={{ display: "flex", justifyContent: "space-between", gap: "2rem", marginBottom: "1rem" }}>
+                           <input name='author' value={formData.author} onChange={handleChange} type="text" className="upload-author" placeholder="Enter author name" id="upload-author" style={{ flex: 1 }} />
+                           <input name='category' value={formData.category} onChange={handleChange} type="text" className="upload-author" placeholder="Category" id="upload-category" style={{ flex: 1 }} />
+                        </div>
+                        <input name='image' type="file" alt="" className="upload-image" placeholder="Select an image" />
+                        <button type="submit" onClick={handleSubmit}>
+                           Upload Now
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              className="bi bi-threads" viewBox="0 0 16 16">
+                              <path
+                                 d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161" />
+                           </svg>
+                        </button>
+                     </form>
+                  </div>
+
 
                </div>
             </div>
