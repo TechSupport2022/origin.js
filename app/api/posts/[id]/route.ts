@@ -44,7 +44,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
    const { id } = params;
    const body = await req.json();
    try {
-      const body = await req.json();
+      console.log("this is the PUT Body: ",body);
       const updatedPost = await Post.findByIdAndUpdate(id, body, { new: true });
       if (!updatedPost) {
          const response = new Response(JSON.stringify({ success: false, message: 'Post not found' }), { status: 404 });
