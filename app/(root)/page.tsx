@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Spinner from "@/component/Spinner";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import LoadingModal from "@/component/LoadingModal";
 
 export default function Home() {
 
@@ -34,6 +35,7 @@ export default function Home() {
    const [posts, setPosts] = useState<Post[]>([]);
    const [activeTab, setActiveTab] = useState<string>('all');
    const [loading, setLoading] = useState<boolean>(true); // Initial loading state
+   const [loadingModal, setLoadingModal] = useState<boolean>(false); // Initial loading modal state
    const [page, setPage] = useState(1);
    const [totalPages, setTotalPages] = useState(1);
 
@@ -84,7 +86,7 @@ export default function Home() {
 
    const handleDelete = async (postId: string) => {
       console.log("Deleting item: " + postId);
-      setLoading(true);
+      setLoadingModal(true);
       try {
          const response = await fetch(`/api/posts/${postId}`, {
             method: 'DELETE',
@@ -99,7 +101,7 @@ export default function Home() {
          console.error('Error deleting post:', error);
       }
       finally {
-         setLoading(false);
+         setLoadingModal(false);
       }
    }
 
@@ -115,7 +117,9 @@ export default function Home() {
 
    return (
       <>
-
+         {
+            loadingModal && <LoadingModal loading={true} />
+         }
 
          {/* <!-- Hero --> */}
          <section>
@@ -130,6 +134,7 @@ export default function Home() {
             </div>
          </section>
          {/* <!-- Content --> */}
+
          <div className="c6969 c9xin cr8w3 ci4j9 clwia cpqam c4a0m">
             {/* <!-- Middle area --> */}
             <div className="c4a0m">
