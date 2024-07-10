@@ -119,7 +119,7 @@ const page = () => {
                                           <div className="catbp c96dc">
                                              <div className="cxmc9 cg0ht cpynq c670g">Mary Christopher</div>
                                              <div className="cxmc9 cg0ht cnp10 cme8e">Designer Lead at Inventa Inc.</div>
-                                             <div className="cxslc c2bb0 cme8e">“ Working with James on projects is a breath of fresh air. He is an extremely talented dev, with an outstanding work ethic, eye for detail, and speed. James doesn't just execute and deliver incredible codes but works with you to challenge the product or flow at hand to create the best possible solution. ”</div>
+                                             <div className="cxslc c2bb0 cme8e">“ Working with Emmanuel on projects is a breath of fresh air. He is an extremely talented dev, with an outstanding work ethic, eye for detail, and speed. He doesn't just execute and deliver incredible codes but works with you to challenge the product or flow at hand to create the best possible solution. ”</div>
                                           </div>
                                        </div>
                                     </li>
@@ -132,7 +132,7 @@ const page = () => {
                                           <div className="catbp c96dc">
                                              <div className="cxmc9 cg0ht cpynq c670g">Harry Kastelli</div>
                                              <div className="cxmc9 cg0ht cnp10 cme8e">CEO &amp; Founder Mark Corp.</div>
-                                             <div className="cxslc c2bb0 cme8e">“ James is an excellent developer. He is not just quick to evaluate and translate ideas into high-fidelity codes, but he's also well-versed in UX strategy. While working together, James handled our external partnership with Design Agencies, and delivered weekly progress reports with fresh ideas. ”</div>
+                                             <div className="cxslc c2bb0 cme8e">“ Emmanuel is an excellent developer. He is not just quick to evaluate and translate ideas into high-fidelity codes, but he's also well-versed in UX strategy. While working together, He handled our external partnership with Design Agencies, and delivered weekly progress reports with fresh ideas. ”</div>
                                           </div>
                                        </div>
                                     </li>
