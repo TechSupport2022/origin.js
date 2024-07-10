@@ -84,6 +84,7 @@ export default function Home() {
 
    const handleDelete = async (postId: string) => {
       console.log("Deleting item: " + postId);
+      setLoading(true);
       try {
          const response = await fetch(`/api/posts/${postId}`, {
             method: 'DELETE',
@@ -96,6 +97,9 @@ export default function Home() {
          }
       } catch (error) {
          console.error('Error deleting post:', error);
+      }
+      finally {
+         setLoading(false);
       }
    }
 
