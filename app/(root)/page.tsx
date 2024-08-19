@@ -38,7 +38,8 @@ export default function Home() {
    const [loadingModal, setLoadingModal] = useState<boolean>(false); // Initial loading modal state
    const [page, setPage] = useState(1);
    const [totalPages, setTotalPages] = useState(1);
-   const [user, setUser] = useState(localStorage.getItem('user'));
+   const [user, setUser] = useState<any>(null);
+   // const [user, setUser] = useState(localStorage.getItem('user'));
 
 
 
@@ -57,16 +58,15 @@ export default function Home() {
    };
 
    useEffect(() => {
-      useEffect(() => {
-         if (typeof window !== 'undefined') {
-            // This code will only run on the client side
-            console.log('This is user secret: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
-            const user = localStorage.getItem('user');
-            console.log("This is localStorage user: ", user);
-         }
-      
-         fetchPosts();
-      }, [page]);
+      if (typeof window !== 'undefined') {
+         // This code will only run on the client side
+         const storedUser = localStorage.getItem('user');
+         setUser(storedUser);
+         console.log('This is user secret: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
+         console.log("This is localStorage user: ", storedUser);
+      }
+
+      fetchPosts();
    }, [page]);
 
    const handleNextPage = () => {
