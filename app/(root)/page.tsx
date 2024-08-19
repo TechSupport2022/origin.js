@@ -57,9 +57,12 @@ export default function Home() {
    };
 
    useEffect(() => {
-      console.log('This is user secrete: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
-      console.log("This is localStorage: ", localStorage.getItem('user'));
-      fetchPosts();
+      if (typeof window !== 'undefined') {
+         // This code will only run on the client side
+         console.log('This is user secret: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
+         const user = localStorage.getItem('user');
+         console.log("This is localStorage user: ", user);
+      }
    }, [page]);
 
    const handleNextPage = () => {
