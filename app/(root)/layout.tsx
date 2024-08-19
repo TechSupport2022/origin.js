@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 
    return (
-      <html lang="en">
+      <html className="dark" lang="en">
          <body className={`${inter.className} c81c8 coo5n ce3nz cg0ht cpw1o cngo2 c9mf7`}>
 
             <div className="cfbgr cpphc">
