@@ -4,9 +4,10 @@ import React, { InputHTMLAttributes, useEffect, useState } from 'react'
 
 const Header = () => {
 
-   const [isDarkMode, setIsDarkMode] = useState(
-      typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'true'
-   );
+   const [isDarkMode, setIsDarkMode] = useState(true);
+   // const [isDarkMode, setIsDarkMode] = useState(
+   //    typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'true'
+   // );
 
    useEffect(() => {
       // Update the dark mode class on the document element
