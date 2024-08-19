@@ -54,7 +54,7 @@ const page = () => {
                                           </div>
                                           <div className="catbp c96dc">
                                              <div className="c2bb0 cd99g ck5r6">May 2017 <span className="cxuy4 crnoq">·</span> Apr 2020</div>
-                                             <div className="cxmc9 cg0ht cpynq c670g">Nationa Diploma</div>
+                                             <div className="cxmc9 cg0ht cpynq c670g">National Diploma</div>
                                              <div className="cxmc9 cg0ht cnp10 cme8e">Osun State Polytechnic (Ospoly), Iree, Nigeria.</div>
                                              <div className="cxslc c2bb0 cme8e">Throughout my years at Ospoly as a computer science major, I immersed myself in a dynamic learning environment, surrounded by dedicated faculty and talented peers.</div>
                                           </div>
@@ -151,7 +151,7 @@ const page = () => {
                      <div className="c92wf">
 
                         {/* <!-- Technical Skills widget --> */}
-                        <TechnicalWidget title="Technical Skills" />
+                        <TechnicalWidget title="Technical Skillsllllllllllllll" />
 
                         {/* <!-- Languages widget --> */}
                         <LanguageWidget title='Languages' />

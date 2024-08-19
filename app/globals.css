@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -32,6 +33,14 @@ body {
   }
 } */
 
+
+.tailwind_aria::before {
+   width: 70% !important;
+}
+
+.nextjs_aria::before {
+   width: 90% !important;
+}
 
 
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=PT+Mono&amp;display=fallback);
