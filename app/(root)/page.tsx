@@ -57,12 +57,16 @@ export default function Home() {
    };
 
    useEffect(() => {
-      if (typeof window !== 'undefined') {
-         // This code will only run on the client side
-         console.log('This is user secret: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
-         const user = localStorage.getItem('user');
-         console.log("This is localStorage user: ", user);
-      }
+      useEffect(() => {
+         if (typeof window !== 'undefined') {
+            // This code will only run on the client side
+            console.log('This is user secret: ', process.env.NEXT_PUBLIC_USER_SECRET_KEY);
+            const user = localStorage.getItem('user');
+            console.log("This is localStorage user: ", user);
+         }
+      
+         fetchPosts();
+      }, [page]);
    }, [page]);
 
    const handleNextPage = () => {
