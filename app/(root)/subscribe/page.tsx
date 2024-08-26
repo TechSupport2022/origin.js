@@ -25,7 +25,7 @@ const page = () => {
                                         <h1 className="cpynq cme53 ciz93">Never miss an update ✨</h1>
                                         {/* <!-- Page content --> */}
                                         <div className="cxslc c2bb0 cr8w3">
-                                            <p className="c5rvt">This newsletter is written by Mark Ivings, who previously worked at Google, Medium, Vimeo, and Qonto. Here is what to expect by subscribing:</p>
+                                            <p className="c5rvt">This newsletter is written by Techlead, Here is what to expect by subscribing:</p>
                                             <ul className="c9gi4">
                                                 <li className="c9noy cfwvb">
                                                     <svg className="cjnrq chugl csb3e c9ahf cud2d cf4g2 cafn9" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
