@@ -28,7 +28,7 @@ const page = () => {
                                  <h2 className="cpynq c670g c8dzi cu69a">Side Hustles</h2>
                                  {/* <!-- Cards --> */}
                                  <div className="c2bf0 cuyx0 ci65n cgdgh ceazt">
-                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
+                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://harkanni.github.io/hermit/">
                                        <div className="c0bc4 cglmn cfwvb">
                                           <div className="c4a0m">
                                              <div className="cpk71 c5a0p c07io cfwvb">
@@ -47,7 +47,7 @@ const page = () => {
                                           </div>
                                        </div>
                                     </a>
-                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="#">
+                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://harkanni.github.io/card-stack-on-scroll-effect/">
                                        <div className="c0bc4 cglmn cfwvb">
                                           <div className="c4a0m">
                                           <div className="cpk71 c5a0p c07io cfwvb">
@@ -106,7 +106,7 @@ const page = () => {
                                           </div>
                                        </div>
                                     </a>
-                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://github.com/Harkanni/SummizeVite">
+                                    <a className="transition-color ciouw cxbr2 cg3vi cj965 cry3b c81t6 cax03 chtu4 czz51 c90wr cpnf3 c5oxi" href="https://tldrly.netlify.app">
                                        <div className="c0bc4 cglmn cfwvb">
                                           <div className="c4a0m">
                                              <div className="ce7gc cax03 cfup8 c5a0p c3iz2 c90wr c4udf cfwvb c924u cvlm4">
